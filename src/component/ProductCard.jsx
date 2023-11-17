@@ -1,13 +1,7 @@
 import React from "react";
 
-const ProductCard = ({ thumbnail, name, price, reviews, variants, isSale }) => {
-  
-  let maxPrice = { originPrice: 0, salePrice: 0 };
-  variants.forEach((variant) => {
-    if (variant.salePrice > maxPrice.salePrice) {
-      maxPrice = variant;
-    }
-  });
+const ProductCard = ({ thumbnail, name, price, reviews, isSale }) => {
+
   return (
     <>
       <div className="card h-100">
@@ -44,19 +38,11 @@ const ProductCard = ({ thumbnail, name, price, reviews, variants, isSale }) => {
         </div>
 
         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-          {variants.length > 1 ? (
-            <div className="text-center">
-              <a className="btn btn-outline-dark mt-auto" href="#">
-                View options
-              </a>
-            </div>
-          ) : (
-            <div className="text-center">
-              <a className="btn btn-outline-dark mt-auto" href="#">
-                Add to cart
-              </a>
-            </div>
-          )}
+          <div className="text-center">
+            <a className="btn btn-outline-dark mt-auto" href="#">
+              Add to cart
+            </a>
+          </div>
         </div>
       </div>
     </>
